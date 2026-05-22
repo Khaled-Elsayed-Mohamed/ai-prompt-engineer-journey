@@ -15,9 +15,9 @@
 | Tue — Day 2 | 🔨 Build | Role + Task + Format — Rewrite 5 Prompts | ✅ Done |
 | Wed — Day 3 | 📖 Learn | Tokens, Temperature & Context Windows | ✅ Done |
 | Thu — Day 4 | 🔨 Build | Temperature 0 vs 1 Experiment | ✅ Done |
-| Fri — Day 5 | 📖 Learn | Zero-shot vs Few-shot Prompting | ⬜ Upcoming |
-| Sat — Day 6 | 🔨 Build | Write 3 Few-shot Prompts | ⬜ Upcoming |
-| Sun — Day 7 | 🔁 Review | Weekly Reflection | ⬜ Upcoming |
+| Fri — Day 5 | 📖 Learn | Zero-shot vs Few-shot Prompting | ✅ Done |
+| Sat — Day 6 | 🔨 Build | Write 3 Few-shot Prompts | ✅ Done |
+| Sun — Day 7 | 🔁 Review | Weekly Reflection | ✅ Done |
 
 ---
 
@@ -302,80 +302,201 @@ have a different emotional tone.
 
 ---
 
-# ⬜ Day 5 — Friday · Learn Day
+# ✅ Day 5 — Friday · Learn Day
 
 ## Topic: Zero-shot vs Few-shot Prompting
 > [!NOTE]
-> **Source:** [learnprompting.org](https://learnprompting.org) — free course
+> **Source:** [learnprompting.org — Few-Shot Prompting](https://learnprompting.org/docs/basics/few_shot)
+
+---
 
 ### What I Studied
-- 
+
+**Zero-Shot Prompting**
+No examples provided — the model relies entirely on its pre-trained knowledge to figure out what you want.
+
+**One-Shot Prompting**
+A single example is given to clarify the task and expected output format.
+
+**Few-Shot Prompting**
+Two or more examples are included, allowing the model to recognise patterns and deliver more accurate, consistently formatted responses.
+
+---
 
 ### Key Takeaways
-- 
-- 
-- 
+
+```diff
++ Zero-shot = no examples. Works for simple or well-understood tasks.
++ Few-shot = 2+ examples. Works best when format and accuracy matter.
++ The more structured the output you need, the more few-shot helps.
+```
 
 ---
 
----
+> [!IMPORTANT]
+> **Real-world application:** Building a prompt to extract invoice data (date, amount, vendor) from messy text? Use few-shot — show the model 2–3 examples of messy input → clean structured output so it knows exactly what format you want. Zero-shot will give inconsistent formatting run to run.
 
-# ⬜ Day 6 — Saturday · Build Day
-
-## Topic: Write 3 Few-shot Prompts
-
-> [!NOTE]
-> **Task:** Write 3 few-shot prompts for these real tasks:
-> 1. Classify a customer complaint
-> 2. Extract info from a paragraph
-> 3. Summarise an article
-
-### Few-shot Prompt 1 — Customer Complaint Classifier
-```
-(paste your prompt here)
-```
-
-### Few-shot Prompt 2 — Info Extraction
-```
-(paste your prompt here)
-```
-
-### Few-shot Prompt 3 — Article Summariser
-```
-(paste your prompt here)
-```
+> [!WARNING]
+> **Limitations to watch for:**
+> - **Context window** — too many examples eats into the space available for the actual input. In production this becomes a real constraint.
+> - **Overgeneralisation** — if your examples are too similar, the model may miss edge cases it hasn't seen.
+> - **Superficial pattern matching** — the model might copy the surface style of your examples without understanding the underlying task.
 
 > [!TIP]
-> *(What did adding examples to the prompt change about the output?)*
+> **Rule of thumb:** Start zero-shot. If the output format is inconsistent or wrong, add 2–3 examples. Don't add more examples than you need — every example costs tokens.
+
+---
+
+## Key Insight — Day 5
+
+> *"Zero-shot asks the model to guess what you want. Few-shot shows it. For anything where format and consistency matter, showing beats telling."*
 
 ---
 
 ---
 
-# ⬜ Day 7 — Sunday · Weekly Review
+# ✅ Day 6 — Saturday · Build Day
+
+## Topic: Write 3 Few-shot Prompts
+> [!NOTE]
+> **Task:** Build and test 3 real few-shot prompts — classifier, extractor, summariser.
+> **Model:** claude-haiku-4-5
+
+---
+
+### Prompt 1 — Customer Complaint Classifier
+
+```
+Classify the customer message below into exactly one category: 
+Billing, Technical, Shipping, or General.
+Respond with only the category name, nothing else.
+
+Example 1:
+Input: "I was charged twice for my subscription this month and need a refund."
+Output: Billing
+
+Example 2:
+Input: "The app keeps crashing every time I try to log in."
+Output: Technical
+
+Now do this:
+Input: "I can't figure out how to change my password."
+Output:
+```
+
+**Result:** `Technical` — one word, nothing else. ✅
+
+**Token cost:** 105 input tokens
+
+---
+
+### Prompt 2 — Info Extractor
+
+```
+Extract the name, date, and amount from the text below.
+Respond in this exact format:
+Name: [name]
+Date: [date]
+Amount: [amount]
+
+Example 1:
+Input: "John Smith placed an order on March 3rd 2024 for a total of $142.50."
+Output:
+Name: John Smith
+Date: March 3rd 2024
+Amount: $142.50
+
+Example 2:
+Input: "A payment of $89 was processed for Sarah Lee on the 14th of January."
+Output:
+Name: Sarah Lee
+Date: 14th of January
+Amount: $89
+
+Now do this:
+Input: "We received a invoice from Michael Torres dated July 22 2025 totalling $310."
+Output:
+```
+
+**Result:**
+```diff
++ Name: Michael Torres
++ Date: July 22 2025
++ Amount: $310
+```
+Exact format, no deviation. ✅
+
+**Token cost:** 184 input tokens
+
+---
+
+### Prompt 3 — Article Summariser
+
+```
+Summarise the text below in exactly 2 sentences.
+First sentence: the main point. Second sentence: the key supporting detail.
+[2 examples provided]
+```
+
+**Input used:** McKinsey AI & jobs market paragraph
+
+**Result:**
+> *"Artificial intelligence is transforming the job market by automating significant portions of work across industries, with knowledge workers facing the biggest impact. A 2024 McKinsey report found that 30% of tasks could be automated with current AI technology, but new roles in AI oversight and human-AI collaboration are emerging to replace some displaced jobs."*
+
+Clean 2-sentence structure, main point + supporting detail. ✅
+
+**Token cost:** 384 input tokens
+
+---
+
+> [!IMPORTANT]
+> **Token cost pattern across the 3 prompts: 105 → 184 → 384**
+> More examples + longer inputs = more tokens consumed. Every example you add to a few-shot prompt multiplies cost across every API call. In production at scale (e.g. 50,000 tickets/month), this compounds fast.
+
+> [!TIP]
+> **Production rule:** Keep few-shot prompts minimal. Add examples only when accuracy is actually failing — not as a default. The classifier worked perfectly with just 2 examples and 105 tokens. That's the goal.
+
+> [!NOTE]
+> **Key observation:** The format instruction ("respond with only the category name, nothing else") was what controlled the output length — not the examples. Examples teach the pattern. Format instructions enforce the shape.
+
+---
+
+## Key Insight — Day 6
+
+> *"Few-shot examples show the model what you want. Format instructions control how it responds. You need both — and in production, every token costs money, so use the minimum that works."*
+
+---
+
+---
+
+# ✅ Day 7 — Sunday · Weekly Review
 
 ## What I Learned This Week
-*(Write half a page in your own words — what you learned and what surprised you)*
+
+Before this week I thought prompting was simple — just typing instructions into a chat window. Now I understand it's a real engineering discipline with structure, tradeoffs, and measurable outcomes. Every prompt is a specification, and the quality of what you get back is a direct reflection of how precisely you defined what you wanted.
 
 ---
 
 ## What Clicked
+
 > [!TIP]
-> 
+> **Few-shot prompt construction** — knowing exactly how to structure examples (input → output pairs) to teach the model a pattern, and understanding that format instructions and examples serve different purposes: examples teach the task, instructions control the shape of the response.
 
-## What Was Confusing
-> [!WARNING]
-> 
+## What Surprised Me
 
-## What I Want To Revisit
-> [!CAUTION]
-> 
+> [!IMPORTANT]
+> **Temperature.** The idea that the same prompt at temperature 0 would produce word-for-word identical outputs across 4 runs — while temperature 1 generated completely different ideas each time, including lines no other run came close to — made the concept real in a way that reading about it never would have.
+
+## What's Clear
+
+> [!NOTE]
+> Everything from this week is solid: tokens, temperature, context windows, zero-shot vs few-shot, Role + Task + Format structure, and how token cost compounds at scale in production.
 
 ---
 
 ## Week 1 — Key Insight
 
-> *"(Write the one sentence that best captures what this week taught you.)"*
+> *"Before this week I thought prompting was simple. Now I understand it's complex — and that complexity is exactly what makes it a skill worth building."*
 
 ---
 
@@ -383,9 +504,9 @@ have a different emotional tone.
 
 | Resource | What I Used It For |
 |----------|--------------------|
-| [Anthropic Prompt Engineering Docs](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) | Day 1 reading |
-| [learnprompting.org](https://learnprompting.org) | Day 5 reading |
-| | |
+| [Anthropic Prompt Engineering Docs](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) | Day 1 — foundations |
+| [learnprompting.org](https://learnprompting.org/docs/basics/few_shot) | Day 5 — zero-shot vs few-shot |
+| Anthropic API Playground (Workbench) | Days 4 & 6 — temperature experiment + few-shot builds |
 
 ---
 
