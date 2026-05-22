@@ -1,0 +1,28 @@
+# Resources — AI Prompt Engineer Journey
+
+All sources referenced throughout the learning journey, organised by week and topic.
+
+---
+
+## Week 1 — Foundations
+
+| Resource | Type | Topic | Used In |
+|----------|------|-------|---------|
+| [Anthropic Prompt Engineering Docs](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) | Documentation | Prompt structure, best practices | Day 1 |
+| [Claude API Docs — Messages](https://docs.anthropic.com/en/api/messages) | Documentation | API usage, token counting | Day 3, Day 6 |
+
+---
+
+## Week 2 — Core Techniques
+
+| Resource | Type | Topic | Used In |
+|----------|------|-------|---------|
+| [Learn Prompting — Chain of Thought](https://learnprompting.org/docs/intermediate/chain_of_thought) | Guide | CoT prompting, zero-shot vs few-shot CoT | Day 1 |
+
+---
+
+## How to Use This File
+
+- Add a new row whenever you read an article, watch a video, or reference documentation
+- Keep the link, type (Documentation / Article / Video / Course / Paper), topic, and which day you used it
+- At the end of each week, this file becomes the "Sources" section of your portfolio README
