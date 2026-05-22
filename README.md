@@ -25,8 +25,8 @@ This repo documents every step of that journey in real time — the experiments,
 
 | Week | Theme | Status |
 |------|-------|--------|
-| **Week 1** | How LLMs Work & Why Prompts Matter | 🔄 In Progress |
-| **Week 2** | Core Techniques Every Prompt Engineer Knows | ⬜ Upcoming |
+| **Week 1** | How LLMs Work & Why Prompts Matter | ✅ Done |
+| **Week 2** | Core Techniques Every Prompt Engineer Knows | 🔄 In Progress |
 | **Week 3** | Working With the API | ⬜ Upcoming |
 | **Week 4** | Portfolio Project #1 | ⬜ Upcoming |
 | **Week 5** | Pick Your Niche | ⬜ Upcoming |
