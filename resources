@@ -39,6 +39,7 @@
 | # | Resource | Type | Topic | Day |
 |---|----------|------|-------|-----|
 | 3 | [Learn Prompting — Chain of Thought](https://learnprompting.org/docs/intermediate/chain_of_thought) | 📖 Guide | CoT prompting, zero-shot vs few-shot CoT, when to use reasoning chains | Week 2 · Day 1 |
+| 4 | [Anthropic Docs — System Prompts](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/system-prompts) | 📄 Documentation | System prompt structure, role prompting, production configuration | Week 2 · Day 2 |
 
 ---
 
