@@ -27,7 +27,7 @@
 
 ## What I Studied
 > [!NOTE]
-> **Source:** Anthropic Prompt Engineering Docs — first 3 sections
+> **Source:** Anthropic Prompt Engineering Docs 
 > 🔗 [docs.anthropic.com/en/docs/build-with-claude/prompt-engineering](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
 
 ### Key Takeaways
