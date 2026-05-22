@@ -82,6 +82,12 @@ ai-prompt-engineer-journey/
 > - **Temperature 0** = consistent and predictable · **Temperature 1** = creative and varied
 > - **Context window** = the model's working memory — exceed it and early content gets dropped
 
+> [!TIP]
+> **Week 2 (in progress) — Techniques building up:**
+> - **Chain-of-Thought prompting** — adding "Think step by step" more than doubles output tokens but unlocks accurate multi-step reasoning
+> - Zero-shot CoT is cheapest; few-shot CoT is more controlled — use the simplest version that works
+> - CoT is only worth the extra cost when the task genuinely requires reasoning; skip it for classification or extraction
+
 ---
 
 ## 🏁 Milestones
