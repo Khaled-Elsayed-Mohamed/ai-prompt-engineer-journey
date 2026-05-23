@@ -13,8 +13,8 @@
 |-----|------|-------|--------|
 | Mon — Day 1 | 📖 Learn | Chain-of-Thought Prompting | ✅ Done |
 | Tue — Day 2 | 🔨 Build | Role Prompting & System Prompts | ✅ Done |
-| Wed — Day 3 | 📖 Learn | System Prompt Deep Dive & Testing | 🔨 In Progress |
-| Thu — Day 4 | 🔨 Build | Build Customer Support System Prompt | ⏳ Pending |
+| Wed — Day 3 | 📖 Learn | System Prompt Deep Dive & Testing | ✅ Done |
+| Thu — Day 4 | 🔨 Build | Build Customer Support System Prompt | ✅ Done |
 | Fri — Day 5 | 🔨 Build | Refine & Peer Review | ⏳ Pending |
 | Sat — Day 6 | 📝 Doc | Document & Push to GitHub | ⏳ Pending |
 | Sun — Day 7 | 🔁 Review | Weekly Reflection | ⏳ Pending |
@@ -49,7 +49,7 @@
 
 ---
 
-### Day 3 — Learning from Testing
+### Day 3 — System Prompt Deep Dive & Quiz-Based Learning
 
 **What I Discovered:** System prompts have higher priority than user messages. If you set "be professional" in the system prompt and then ask "be sarcastic" in a user message, the model defaults to professional. The system prompt is the contract.
 
@@ -57,6 +57,28 @@
 - Role prompting works because it constrains the response space
 - Multiple constraints in one system prompt each do separate jobs
 - Token efficiency: a well-scoped system prompt often *saves* tokens overall
+
+**Learning Method:** Confirmed understanding through quiz questions (what's role prompting? how do system prompts differ from user prompts? when would you use them?). This deepened the concepts from Day 2.
+
+---
+
+### Day 4 — Building a Real System Prompt (Notion Support Bot)
+
+**What I Built:** A customer support system prompt for a SaaS tool (Notion) that handles 5 diverse scenarios: off-topic questions, vague product questions, technical issues, angry escalations, and feature requests.
+
+**Evolution Process:**
+- **v1:** Initial prompt (passed 4/5 tests, failed on crisis handling)
+- **v2:** Added CRITICAL ISSUES escalation path (immediate escalation for data loss/security concerns)
+- **v3:** Refined tone + added help docs references + "explain the why" instruction (all 5 tests pass)
+
+**Test Results:** ✅ All 5 tests pass
+- Off-topic redirection works
+- Clarifying questions prevent bad advice
+- Technical troubleshooting provides specific solutions
+- Crisis escalation is immediate (not stalling)
+- Feature requests handled with workarounds + feedback channel
+
+**Key Finding:** System prompts need different modes for different situations. The CRITICAL ISSUES section forces immediate escalation for emergencies, while everything else uses troubleshooting/clarification. That branching logic changed behavior from "helpful but slow" to "helpful AND fast."
 
 ---
 
@@ -67,10 +89,13 @@ Each day's detailed notes, experiments, and builds are in separate files:
 - `notes-day-01.md` — Chain-of-Thought theory + token experiments
 - `notes-day-02.md` — Role prompting theory + system prompt experiments
 - `notes-day-03.md` — Deep dive on understanding system prompts + practical insights
-- `notes-day-04.md` — Build a customer support system prompt (in progress)
+- `notes-day-04.md` — Built Notion support system prompt (v1→v2→v3), tested 5 scenarios, all pass ✅
 - `notes-day-05.md` — Refine & peer review (coming soon)
 - `notes-day-06.md` — Document & publish (coming soon)
 - `notes-day-07.md` — Weekly reflection (coming soon)
+
+**Artifacts Created:**
+- `prompts/notion-support-system-prompt.md` — Final system prompt + adaptations guide
 
 ---
 
@@ -81,6 +106,9 @@ Each day's detailed notes, experiments, and builds are in separate files:
 
 **On System Prompts:**
 > "I tested the difference between vague and specific roles on the exact same user message. 'You are a helpful assistant' changed nothing and cost more tokens than no system prompt at all. A specific role with constraints cut output by 55% and produced exactly what I asked for. In a real deployment, I'd treat the system prompt as a specification document: every instruction should have a purpose."
+
+**On Building Real System Prompts:**
+> "I built a customer support system prompt and tested it with 5 diverse scenarios: off-topic questions, vague product questions, technical issues, angry users, and feature requests. The first version failed on crisis handling — upset users felt stalled. I identified that the prompt needed an immediate-escalation path for critical issues (data loss, account access). Version 2 fixed that. Then I refined tone and added help doc references in Version 3. All 5 tests pass. The key insight: system prompts are specifications. Each instruction does a specific job — I wrote the escalation section specifically to prevent stalling upset users."
 
 ---
 
@@ -104,10 +132,29 @@ Week 3 builds on these core techniques:
 
 ---
 
-## 💡 Week 2 Biggest Insight
+## 💡 Week 2 Biggest Insights
 
 > *"System prompts aren't decorative — they're the foundation. Everything a model does flows from the system prompt first, then the user message. Get the system prompt right, and the rest becomes easier."*
 
+> *"System prompts are specification documents. Every line should do exactly one job. Test your assumptions — building the support bot revealed that crisis handling needed its own path, not buried in general troubleshooting logic."*
+
 ---
 
-*Next up → Week 3: Prompt Chaining & Evaluation 🚀*
+## ✅ Week 2 Summary
+
+**Completed:**
+- ✅ Learned Chain-of-Thought prompting (theory + experiments)
+- ✅ Learned role prompting & system prompts (theory + experiments)
+- ✅ Deep-dived on system prompts through quiz-based learning
+- ✅ Built a real Notion support system prompt (v1→v2→v3)
+- ✅ Tested 5 diverse scenarios (all pass)
+- ✅ Documented findings & interview talking points
+
+**Remaining:**
+- ⏳ Day 5: Refine & peer review
+- ⏳ Day 6: Final documentation push
+- ⏳ Day 7: Weekly reflection
+
+---
+
+*Next up → Day 5: Refine & Peer Review 🚀*
