@@ -1,14 +1,10 @@
 # 🤖 AI Prompt Engineer Journey — Khaled
 
 > [!IMPORTANT]
-> **Goal:** Land an in-house AI Prompt Engineer role by **August 2026**
+> **Goal:** Learn prompt engineering best practice
 > **Commitment:** 2 hours/day · 3-month structured roadmap · Starting May 2026
 
 ---
-
-## 👤 Background
-
-Previously an iOS/Swift developer — built real apps, worked with MVC patterns, animations, and production code. After 4 years building outside of tech, I'm returning with sharper focus and a clear direction: **AI Prompt Engineering**.
 
 This repo documents every step of that journey in real time — the experiments, the failures, the projects, and the reasoning behind every decision.
 
