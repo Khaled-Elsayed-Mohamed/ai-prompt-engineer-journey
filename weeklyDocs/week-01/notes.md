@@ -1,6 +1,6 @@
 # 🧠 Week 1 — How LLMs Work & Why Prompts Matter
 
-**📅 May 2026 &nbsp;·&nbsp; AI Prompt Engineer Journey &nbsp;·&nbsp; Khaled**
+**AI Prompt Engineer Journey · Khaled**
 
 > [!IMPORTANT]
 > **Goal this week:** Understand what's happening when you write a prompt — stop guessing, start designing.
@@ -11,13 +11,13 @@
 
 | Day | Mode | Theme | Status |
 |-----|------|-------|--------|
-| Mon — Day 1 | 📖 Learn | Anthropic Prompt Engineering Intro | ✅ Done |
-| Tue — Day 2 | 🔨 Build | Role + Task + Format — Rewrite 5 Prompts | ✅ Done |
-| Wed — Day 3 | 📖 Learn | Tokens, Temperature & Context Windows | ✅ Done |
-| Thu — Day 4 | 🔨 Build | Temperature 0 vs 1 Experiment | ✅ Done |
-| Fri — Day 5 | 📖 Learn | Zero-shot vs Few-shot Prompting | ✅ Done |
-| Sat — Day 6 | 🔨 Build | Write 3 Few-shot Prompts | ✅ Done |
-| Sun — Day 7 | 🔁 Review | Weekly Reflection | ✅ Done |
+| Day 1 | 📖 Learn | Anthropic Prompt Engineering Intro | ✅ Done |
+| Day 2 | 🔨 Build | Role + Task + Format — Rewrite 5 Prompts | ✅ Done |
+| Day 3 | 📖 Learn | Tokens, Temperature & Context Windows | ✅ Done |
+| Day 4 | 🔨 Build | Temperature 0 vs 1 Experiment | ✅ Done |
+| Day 5 | 📖 Learn | Zero-shot vs Few-shot Prompting | ✅ Done |
+| Day 6 | 🔨 Build | Write 3 Few-shot Prompts | ✅ Done |
+| Day 7 | 🔁 Review | Weekly Reflection | ✅ Done |
 
 ---
 

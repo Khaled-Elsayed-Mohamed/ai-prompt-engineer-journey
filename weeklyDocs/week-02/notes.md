@@ -1,6 +1,6 @@
 # 🧠 Week 2 — Core Techniques Every Prompt Engineer Knows
 
-**📅 May 2026 &nbsp;·&nbsp; AI Prompt Engineer Journey &nbsp;·&nbsp; Khaled**
+**AI Prompt Engineer Journey · Khaled**
 
 > [!IMPORTANT]
 > **Goal this week:** Learn the 4–5 techniques that appear in almost every real-world prompt engineering job. Move from "I can write a prompt" to "I understand *why* prompts work."
@@ -11,13 +11,13 @@
 
 | Day | Mode | Theme | Status |
 |-----|------|-------|--------|
-| Mon — Day 1 | 📖 Learn | Chain-of-Thought Prompting | ✅ Done |
-| Tue — Day 2 | 🔨 Build | Role Prompting & System Prompts | ✅ Done |
-| Wed — Day 3 | 📖 Learn | System Prompt Deep Dive & Testing | ✅ Done |
-| Thu — Day 4 | 🔨 Build | Build Customer Support System Prompt | ✅ Done |
-| Fri — Day 5 | 🔨 Build | Refine & Peer Review | ⏳ Pending |
-| Sat — Day 6 | 📝 Doc | Document & Push to GitHub | ⏳ Pending |
-| Sun — Day 7 | 🔁 Review | Weekly Reflection | ⏳ Pending |
+| Day 1 | 📖 Learn | Chain-of-Thought Prompting | ✅ Done |
+| Day 2 | 🔨 Build | Role Prompting & System Prompts | ✅ Done |
+| Day 3 | 📖 Learn | System Prompt Deep Dive & Testing | ✅ Done |
+| Day 4 | 🔨 Build | Build Customer Support System Prompt | ✅ Done |
+| Day 5 | 🔨 Build | Prompt Chaining — 3-Step Chain | ✅ Done |
+| Day 6 | 📝 Doc | Document & Push to GitHub | ✅ Done |
+| Day 7 | 🔁 Review | Weekly Reflection | ✅ Done |
 
 ---
 
@@ -29,7 +29,7 @@
 
 **Key Finding:** Zero-shot CoT (just adding "Think step by step") more than doubled output tokens (72 → 159) but is the cheapest way to unlock reasoning. Only use it when the task genuinely requires step-by-step logic.
 
-**Token Trade-off:** 
+**Token Trade-off:**
 - No CoT: 126 tokens total
 - Zero-shot CoT: 219 tokens total
 - Worth the cost when: complex logic, code debugging, multi-condition reasoning
@@ -49,7 +49,7 @@
 
 ---
 
-### Day 3 — System Prompt Deep Dive & Quiz-Based Learning
+### Day 3 — System Prompt Deep Dive
 
 **What I Discovered:** System prompts have higher priority than user messages. If you set "be professional" in the system prompt and then ask "be sarcastic" in a user message, the model defaults to professional. The system prompt is the contract.
 
@@ -57,8 +57,6 @@
 - Role prompting works because it constrains the response space
 - Multiple constraints in one system prompt each do separate jobs
 - Token efficiency: a well-scoped system prompt often *saves* tokens overall
-
-**Learning Method:** Confirmed understanding through quiz questions (what's role prompting? how do system prompts differ from user prompts? when would you use them?). This deepened the concepts from Day 2.
 
 ---
 
@@ -72,30 +70,53 @@
 - **v3:** Refined tone + added help docs references + "explain the why" instruction (all 5 tests pass)
 
 **Test Results:** ✅ All 5 tests pass
-- Off-topic redirection works
-- Clarifying questions prevent bad advice
-- Technical troubleshooting provides specific solutions
-- Crisis escalation is immediate (not stalling)
-- Feature requests handled with workarounds + feedback channel
 
-**Key Finding:** System prompts need different modes for different situations. The CRITICAL ISSUES section forces immediate escalation for emergencies, while everything else uses troubleshooting/clarification. That branching logic changed behavior from "helpful but slow" to "helpful AND fast."
+---
+
+### Day 5 — Prompt Chaining
+
+**What is Chaining?** Breaking a complex task into a sequence of smaller prompts where the output of each step feeds into the next. The backbone of most production AI systems.
+
+**Key Pattern — Extract First:** Separating "what is the input saying?" from "what should the output be?" consistently improves both steps. A prompt that extracts structured data doesn't also need to generate a response.
+
+**Result:** A 3-step customer reply chain (extract → draft → polish) produced more consistent, higher-quality output than a single all-in-one prompt.
+
+---
+
+### Day 6 — Documentation
+
+**What Makes AI Documentation Portfolio-Ready:**
+- Lead with the problem, not the solution
+- Show your reasoning — explain *why* each version changed
+- Include failure — v1 → v2 evolution is more credible than "here's the finished prompt"
+- Keep it under two pages
+
+---
+
+### Day 7 — Weekly Reflection
+
+**Biggest insight:** System prompts are specification documents. Every line should have a purpose. Vague prompts cost more and produce less.
+
+**Confidence at end of week:**
+- Chain-of-Thought: 7/10
+- System prompts: 8/10
+- Prompt chaining: 7/10
+- Portfolio documentation: 8/10
 
 ---
 
 ## 📂 Daily Notes
 
-Each day's detailed notes, experiments, and builds are in separate files:
-
 - `notes-day-01.md` — Chain-of-Thought theory + token experiments
 - `notes-day-02.md` — Role prompting theory + system prompt experiments
-- `notes-day-03.md` — Deep dive on understanding system prompts + practical insights
-- `notes-day-04.md` — Built Notion support system prompt (v1→v2→v3), tested 5 scenarios, all pass ✅
-- `notes-day-05.md` — Refine & peer review (coming soon)
-- `notes-day-06.md` — Document & publish (coming soon)
-- `notes-day-07.md` — Weekly reflection (coming soon)
+- `notes-day-03.md` — Deep dive on system prompts + practical insights
+- `notes-day-04.md` — Built Notion support system prompt (v1→v2→v3), all 5 tests pass ✅
+- `notes-day-05.md` — Prompt chaining: 3-step customer reply chain experiment
+- `notes-day-06.md` — Portfolio documentation write-up
+- `notes-day-07.md` — Weekly reflection + confidence check
 
-**Artifacts Created:**
-- `prompts/notion-support-system-prompt.md` — Final system prompt + adaptations guide
+**Artifacts:**
+- `prompts/notion-support-system-prompt.md` — Final system prompt + evolution log
 
 ---
 
@@ -105,10 +126,10 @@ Each day's detailed notes, experiments, and builds are in separate files:
 > "I tested zero-shot CoT on a simple math problem. It more than doubled output tokens but didn't change the answer because the problem was too simple. CoT's value appears on harder tasks — multi-step logic, code debugging, complex word problems. I only apply it where reasoning complexity warrants the token cost."
 
 **On System Prompts:**
-> "I tested the difference between vague and specific roles on the exact same user message. 'You are a helpful assistant' changed nothing and cost more tokens than no system prompt at all. A specific role with constraints cut output by 55% and produced exactly what I asked for. In a real deployment, I'd treat the system prompt as a specification document: every instruction should have a purpose."
+> "I tested the difference between vague and specific roles on the exact same user message. 'You are a helpful assistant' changed nothing and cost more tokens than no system prompt at all. A specific role with constraints cut output by 55% and produced exactly what I asked for."
 
-**On Building Real System Prompts:**
-> "I built a customer support system prompt and tested it with 5 diverse scenarios: off-topic questions, vague product questions, technical issues, angry users, and feature requests. The first version failed on crisis handling — upset users felt stalled. I identified that the prompt needed an immediate-escalation path for critical issues (data loss, account access). Version 2 fixed that. Then I refined tone and added help doc references in Version 3. All 5 tests pass. The key insight: system prompts are specifications. Each instruction does a specific job — I wrote the escalation section specifically to prevent stalling upset users."
+**On Prompt Chaining:**
+> "I built a 3-step chain that extracts structured data from a customer email, drafts a reply, then polishes tone. The extract-first pattern consistently outperformed a single all-in-one prompt — because each step is accountable for exactly one job."
 
 ---
 
@@ -119,42 +140,15 @@ Each day's detailed notes, experiments, and builds are in separate files:
 | [Anthropic Prompt Engineering Docs](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) | System prompts section |
 | [learnprompting.org](https://learnprompting.org) | Chain-of-Thought & role prompting guides |
 | Claude Workbench | Hands-on testing of all techniques |
-| Personal experimentation | Comparing outputs side-by-side, measuring tokens |
-
----
-
-## 🎯 What's Next (Week 3)
-
-Week 3 builds on these core techniques:
-- **Prompt chaining:** Breaking big tasks into smaller, sequenced prompts
-- **Evaluation:** How to measure if a prompt actually works
-- **Portfolio project #1:** Build something real that uses these techniques
 
 ---
 
 ## 💡 Week 2 Biggest Insights
 
-> *"System prompts aren't decorative — they're the foundation. Everything a model does flows from the system prompt first, then the user message. Get the system prompt right, and the rest becomes easier."*
+> *"System prompts are specification documents. Every line should do exactly one job."*
 
-> *"System prompts are specification documents. Every line should do exactly one job. Test your assumptions — building the support bot revealed that crisis handling needed its own path, not buried in general troubleshooting logic."*
-
----
-
-## ✅ Week 2 Summary
-
-**Completed:**
-- ✅ Learned Chain-of-Thought prompting (theory + experiments)
-- ✅ Learned role prompting & system prompts (theory + experiments)
-- ✅ Deep-dived on system prompts through quiz-based learning
-- ✅ Built a real Notion support system prompt (v1→v2→v3)
-- ✅ Tested 5 diverse scenarios (all pass)
-- ✅ Documented findings & interview talking points
-
-**Remaining:**
-- ⏳ Day 5: Refine & peer review
-- ⏳ Day 6: Final documentation push
-- ⏳ Day 7: Weekly reflection
+> *"Separating 'extract' from 'generate' consistently produces better outputs than combining both in one prompt."*
 
 ---
 
-*Next up → Day 5: Refine & Peer Review 🚀*
+*Next up → Week 3: Working With the API 🚀*

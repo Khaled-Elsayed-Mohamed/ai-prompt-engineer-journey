@@ -1,8 +1,8 @@
 # 🤖 AI Prompt Engineer Journey — Khaled
 
 > [!IMPORTANT]
-> **Goal:** Land an in-house AI Prompt Engineer role by **August 2026**
-> **Commitment:** 2 hours/day · 3-month structured roadmap · Starting May 2026
+> **Goal:** Land an in-house AI Prompt Engineer role
+> **Commitment:** 2 hours/day · 3-month structured roadmap
 
 ---
 
@@ -26,13 +26,13 @@ This repo documents every step of that journey in real time — the experiments,
 | Week | Theme | Status |
 |------|-------|--------|
 | **Week 1** | How LLMs Work & Why Prompts Matter | ✅ Done |
-| **Week 2** | Core Techniques Every Prompt Engineer Knows | 🔄 In Progress |
-| **Week 3** | Working With the API | ⬜ Upcoming |
-| **Week 4** | Portfolio Project #1 | ⬜ Upcoming |
-| **Week 5** | Pick Your Niche | ⬜ Upcoming |
-| **Week 6** | Portfolio Project #2 | ⬜ Upcoming |
-| **Week 7** | Understanding Evaluation | ⬜ Upcoming |
-| **Week 8** | Capstone Project | ⬜ Upcoming |
+| **Week 2** | Core Techniques Every Prompt Engineer Knows | ✅ Done |
+| **Week 3** | Working With the API | ✅ Done |
+| **Week 4** | Portfolio Project #1 — Message Classifier | ✅ Done |
+| **Week 5** | Pick Your Niche | ✅ Done |
+| **Week 6** | Portfolio Project #2 — Meeting Notes Processor | ✅ Done |
+| **Week 7** | Understanding Evaluation | ✅ Done |
+| **Week 8** | Capstone — Document Q&A System | ✅ Done |
 | **Week 9** | Polish Online Presence | ⬜ Upcoming |
 | **Week 10** | Start Applying | ⬜ Upcoming |
 | **Week 11** | Network Actively | ⬜ Upcoming |
@@ -44,9 +44,9 @@ This repo documents every step of that journey in real time — the experiments,
 
 | Project | Description | Stack | Status |
 |---------|-------------|-------|--------|
-| Project 1 | TBA — Week 4 | Python · Anthropic API | ⏳ Upcoming |
-| Project 2 | TBA — niche chosen in Week 5 | TBD | ⏳ Upcoming |
-| Capstone | Flagship project — Week 8 | TBD | ⏳ Upcoming |
+| Customer Message Classifier | Routes support messages to the correct department with confidence score | Python · Anthropic API | ✅ Done |
+| Meeting Notes Processor | Converts raw meeting notes to structured summary, decisions, action items | Python · Anthropic API | ✅ Done |
+| Document Q&A System | Answers questions from documents with citations, abstains when answer isn't present | Python · Anthropic API | ✅ Done |
 
 ---
 
@@ -83,24 +83,33 @@ ai-prompt-engineer-journey/
 > - **Context window** = the model's working memory — exceed it and early content gets dropped
 
 > [!TIP]
-> **Week 2 (in progress) — Techniques building up:**
-> - **Chain-of-Thought prompting** — adding "Think step by step" more than doubles output tokens but unlocks accurate multi-step reasoning
-> - Zero-shot CoT is cheapest; few-shot CoT is more controlled — use the simplest version that works
-> - CoT is only worth the extra cost when the task genuinely requires reasoning; skip it for classification or extraction
+> **Week 2 — Core techniques:**
+> - **Chain-of-Thought prompting** — "Think step by step" unlocks accurate multi-step reasoning; only use it when reasoning complexity warrants the token cost
+> - **System prompts are specifications** — vague role prompts waste tokens without changing behavior; specificity cuts output by 55%
+> - **Prompt chaining** — separating "extract" from "generate" consistently produces better outputs than one all-in-one prompt
+
+> [!NOTE]
+> **Weeks 3–8 — Built and documented:**
+> - API fundamentals: Python scripts, structured JSON output, conversation state management
+> - Portfolio Project #1: Customer message classifier (v1→v2, 15/15 test cases)
+> - Niche chosen: Internal Business Tools
+> - Portfolio Project #2: Meeting notes processor with owner attribution
+> - Evaluation: 20-input test sets, LLM-as-judge methodology
+> - Capstone: Document Q&A system with citation and abstention
 
 ---
 
 ## 🏁 Milestones
 
-| Date | Milestone |
-|------|-----------|
-| **Jun 21** | Portfolio Project #1 live on GitHub |
-| **Jul 7** | Niche chosen + Project #2 published |
-| **Jul 21** | Capstone project live with Loom demo |
-| **Jul 28** | Resume, LinkedIn & portfolio page polished |
-| **Aug 4** | 15–20 applications submitted |
-| **Aug 11** | Active conversations with 3–5 people in the industry |
-| **Aug 21** | Interviews happening, offer in sight |
+| Milestone | Status |
+|-----------|--------|
+| Portfolio Project #1 live on GitHub | ⬜ |
+| Niche chosen + Project #2 published | ⬜ |
+| Capstone project live with Loom demo | ⬜ |
+| Resume, LinkedIn & portfolio page polished | ⬜ |
+| 15–20 applications submitted | ⬜ |
+| Active conversations with 3–5 people in the industry | ⬜ |
+| Interviews happening, offer in sight | ⬜ |
 
 ---
 

@@ -1,102 +1,70 @@
-# 🔁 Day 7 — Sunday · Weekly Reflection
+# 🔁 Week 2 · Day 7 — Weekly Reflection
 
-## What You'll Do
+**AI Prompt Engineer Journey · Khaled**
 
-**Goal:** Reflect on Week 2. Consolidate what you learned. Prep for Week 3.
-
----
-
-## Reflection Questions
-
-1. **What was the biggest "aha" moment this week?**
-   - Was it something unexpected? Something that contradicted what you thought?
-
-2. **Which technique felt most practical?**
-   - Chain-of-Thought? Role prompting? System prompts?
-   - Which one would you use first in a real project?
-
-3. **What's still fuzzy?**
-   - What concept do you want to understand better?
-   - What would you like to experiment with more?
-
-4. **How would you explain this week to someone who just discovered prompt engineering?**
-   - One sentence for each day's learning
-   - Make it actionable, not academic
+> **Goal:** Consolidate everything from Week 2. Write the honest version of what I learned — not a summary, but an actual account of what landed, what confused me, and what I'd do differently.
 
 ---
 
-## Write Your Reflection
+## What Actually Happened This Week
 
-Create a `week-02-reflection.md` file with:
+Week 2 was denser than Week 1. The techniques weren't harder conceptually, but the gap between understanding them and being able to use them well is bigger than I expected.
 
-```markdown
-# Week 2 Reflection
+Chain-of-Thought, role prompting, system prompts, and prompt chaining — I can explain all four. I can also use all four. But I wouldn't say I'm fluent yet. Fluency comes from doing it on real problems dozens of times, not four times in a tutorial week.
 
-## Key Learnings
-
-### Chain-of-Thought Prompting
-[Your one-sentence takeaway]
-
-### Role Prompting & System Prompts
-[Your one-sentence takeaway]
-
-### Building a System Prompt
-[Your one-sentence takeaway]
-
-## What Surprised Me
-
-[Something you learned that contradicted what you expected]
-
-## What I'd Tell Someone Starting Week 2
-
-[Advice for the next person doing this journey]
-
-## What's Still Confusing
-
-[What do you want to understand better?]
-
-## Most Useful Experiment
-
-[Which test or build helped you learn the most?]
-
-## One Thing I'd Do Differently
-
-[What would you change about how you approached this week?]
-
-## Confidence Level
-
-On a scale of 1-10, how confident do you feel about:
-- Using Chain-of-Thought prompts in a real project? [_/10]
-- Writing effective system prompts? [_/10]
-- Building a multi-prompt system? [_/10]
-
-## Week 3 Mindset
-
-[Briefly: what are you excited to learn next?]
-```
+That's not a failure observation — it's an honest one. Week 2 gave me the vocabulary and the first working examples. Fluency gets built across the next ten weeks.
 
 ---
 
-## GitHub Commit
+## What Landed Most
 
-1. Save your reflection to `week-02/`
-2. Commit with: `"Week 2 reflection: key learnings, surprises, confidence check"`
-3. Push to GitHub
+**System prompts as specification documents.** This framing clicked for me and I've already started thinking about every AI interaction differently. Before this week I thought of system prompts as optional. Now I see them as the contract between the designer and the model — every line should earn its place.
 
----
-
-## Update Main Notes File
-
-Before you move on, you'll update the week-02/notes.md to summarize the week (like the week-01/notes.md does). Your coach will help with that.
+The experiment comparing vague vs. specific roles was the most concrete moment of the week. Seeing a 55% token reduction from specificity wasn't abstract theory — it was data I collected myself.
 
 ---
 
-## Check-In
+## What's Still Fuzzy
 
-By the end of Sunday:
-- ✅ All 7 days documented in individual files
-- ✅ System prompt project in `prompts/`
-- ✅ Reflection written
-- ✅ All commits pushed to GitHub
+**Prompt chaining at scale.** The 3-step chain I built on Day 5 was clean because I designed it. In a real product, chains might have 5+ steps, conditional branches, and error handling. I understand the concept but I haven't stress-tested it yet.
 
-**You're done with Week 2. Nice work.** 🎉
+**When CoT isn't worth it.** I understand the principle (only use it when the task genuinely requires multi-step reasoning). But my instinct for where that line sits is still developing.
+
+---
+
+## What I'd Do Differently
+
+I'd build the chain earlier in the week. Day 5 felt slightly rushed — the concept deserved more experiment time. Next time I'd swap Days 4 and 5 so chaining gets a full build day before documentation.
+
+---
+
+## Confidence Check
+
+| Skill | Confidence |
+|-------|-----------|
+| Using Chain-of-Thought on the right tasks | 7/10 |
+| Writing effective system prompts from scratch | 8/10 |
+| Building and explaining a multi-step prompt chain | 7/10 |
+| Documenting AI work for a portfolio | 8/10 |
+
+---
+
+## One Sentence per Day
+
+1. **Monday:** CoT literally doubles output tokens — use it only when reasoning complexity warrants the cost.
+2. **Tuesday:** Vague system prompts waste tokens without changing behavior; specificity is the only thing that changes outcomes.
+3. **Wednesday:** System prompts have higher priority than user messages — they're the contract, not a suggestion.
+4. **Thursday:** A system prompt that handles crises differently from general questions is more useful than one that handles everything the same way.
+5. **Friday:** Separating "extract" from "generate" consistently produces better outputs than combining both in one prompt.
+6. **Saturday:** Documentation is engineering — explaining why a prompt changed is more valuable than showing the prompt that works.
+7. **Sunday:** Fluency is built through repetition, not exposure. Week 2 gave me tools; the next ten weeks will make them feel natural.
+
+---
+
+## What I'm Taking Into Week 3
+
+Week 3 moves from the playground into actual API calls. This is the step that separates "I use AI" from "I build with AI." It's the technical infrastructure behind everything we've built conceptually.
+
+I'm not nervous about the code — my background is iOS/Swift, so Python syntax and API calls are familiar territory. What I'm looking forward to is seeing prompt techniques applied in code: system messages in a real API structure, conversation history, output parsing.
+
+**Week 2 done. Moving forward.** 🚀
