@@ -1,7 +1,7 @@
 # 🤖 AI Prompt Engineer Journey — Khaled
 
 > [!IMPORTANT]
-> **Goal:** Land an in-house AI Prompt Engineer role
+> **Goal:** Learn prompt engineering properly — the concepts, the techniques, and how to build real things with them
 > **Commitment:** 2 hours/day · 3-month structured roadmap
 
 ---
@@ -33,10 +33,10 @@ This repo documents every step of that journey in real time — the experiments,
 | **Week 6** | Portfolio Project #2 — Meeting Notes Processor | ✅ Done |
 | **Week 7** | Understanding Evaluation | ✅ Done |
 | **Week 8** | Capstone — Document Q&A System | ✅ Done |
-| **Week 9** | Polish Online Presence | ⬜ Upcoming |
+| **Week 9** | Job Search Strategy | ⬜ Upcoming |
 | **Week 10** | Start Applying | ⬜ Upcoming |
 | **Week 11** | Network Actively | ⬜ Upcoming |
-| **Week 12** | Interview Prep & Close | ⬜ Upcoming |
+| **Week 12** | Interview Prep | ⬜ Upcoming |
 
 ---
 
@@ -96,20 +96,6 @@ ai-prompt-engineer-journey/
 > - Portfolio Project #2: Meeting notes processor with owner attribution
 > - Evaluation: 20-input test sets, LLM-as-judge methodology
 > - Capstone: Document Q&A system with citation and abstention
-
----
-
-## 🏁 Milestones
-
-| Milestone | Status |
-|-----------|--------|
-| Portfolio Project #1 live on GitHub | ⬜ |
-| Niche chosen + Project #2 published | ⬜ |
-| Capstone project live with Loom demo | ⬜ |
-| Resume, LinkedIn & portfolio page polished | ⬜ |
-| 15–20 applications submitted | ⬜ |
-| Active conversations with 3–5 people in the industry | ⬜ |
-| Interviews happening, offer in sight | ⬜ |
 
 ---
 
