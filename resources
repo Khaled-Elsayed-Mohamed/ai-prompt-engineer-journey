@@ -43,6 +43,91 @@
 
 ---
 
+---
+
+## Week 3 — Working With the API
+
+> [!TIP]
+> **Theme:** Moving from the playground to real API calls in Python
+
+| # | Resource | Type | Topic | Day |
+|---|----------|------|-------|-----|
+| 5 | [Anthropic API Quickstart](https://docs.anthropic.com/en/api/getting-started) | 📄 Documentation | API keys, first call, request/response structure | Week 3 · Day 1 |
+| 6 | [Anthropic Python SDK — GitHub](https://github.com/anthropics/anthropic-sdk-python) | 📄 Documentation | SDK installation, client setup, message construction | Week 3 · Day 1 |
+| 7 | [Anthropic Docs — Messages API](https://docs.anthropic.com/en/api/messages) | 📄 Documentation | System/user/assistant message roles, max_tokens, stop sequences | Week 3 · Day 2 |
+| 8 | [Anthropic Docs — Structured Output](https://docs.anthropic.com/en/docs/build-with-claude/tool-use) | 📄 Documentation | JSON output, tool use, structured responses | Week 3 · Day 5 |
+| 9 | [Anthropic Cookbook — Basic API Usage](https://github.com/anthropics/anthropic-cookbook) | 📖 Guide | Working code examples for common API patterns | Week 3 · Day 3 |
+
+---
+
+## Week 4 — Portfolio Project #1: Customer Message Classifier
+
+> [!TIP]
+> **Theme:** Build something complete enough to show an employer
+
+| # | Resource | Type | Topic | Day |
+|---|----------|------|-------|-----|
+| 10 | [Anthropic Docs — Few-Shot Prompting](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/use-examples) | 📄 Documentation | Using examples to guide model behaviour, input/output pairs | Week 4 · Day 1 |
+| 11 | [Learn Prompting — Classification](https://learnprompting.org/docs/basics/few_shot) | 📖 Guide | Few-shot classification techniques, confidence scoring | Week 4 · Day 2 |
+| 12 | [Anthropic Docs — Reducing Hallucinations](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/reduce-hallucinations) | 📄 Documentation | Constraining outputs, citation requirements, refusal instructions | Week 4 · Day 4 |
+
+---
+
+## Week 5 — Pick Your Niche
+
+> [!TIP]
+> **Theme:** Internal Business Tools — AI that works on your company's own documents and workflows
+
+| # | Resource | Type | Topic | Day |
+|---|----------|------|-------|-----|
+| 13 | [Seek — Prompt Engineer Jobs (AU)](https://www.seek.com.au/prompt-engineer-jobs) | 📰 Article | Job market research, Australian market, required skills | Week 5 · Day 1 |
+| 14 | [LinkedIn Jobs — AI Prompt Engineer](https://www.linkedin.com/jobs/search/?keywords=prompt+engineer) | 📰 Article | Job postings, skill requirements, seniority levels | Week 5 · Day 1 |
+| 15 | [Notion AI Product Page](https://www.notion.so/product/ai) | 📰 Article | Internal tools niche — how AI is applied to knowledge management | Week 5 · Day 2 |
+| 16 | [Otter.ai](https://otter.ai) | 📰 Article | Meeting transcription + summarisation — competitor/inspiration research | Week 5 · Day 2 |
+
+---
+
+## Week 6 — Portfolio Project #2: Meeting Notes Processor
+
+> [!TIP]
+> **Theme:** Build a polished niche-specific project with documented test results
+
+| # | Resource | Type | Topic | Day |
+|---|----------|------|-------|-----|
+| 17 | [Anthropic Docs — System Prompts Best Practices](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/system-prompts) | 📄 Documentation | System prompt structure, persistent constraints, role configuration | Week 6 · Day 4 |
+| 18 | [Prompting Guide — Prompt Chaining](https://www.promptingguide.ai/techniques/prompt_chaining) | 📖 Guide | Chaining prompts, passing outputs between steps, reducing task complexity | Week 6 · Day 5 |
+| 19 | [JSON Schema Reference](https://json-schema.org/understanding-json-schema) | 📄 Documentation | Schema design, required fields, null handling for structured output | Week 6 · Day 1 |
+
+---
+
+## Week 7 — Understanding Evaluation
+
+> [!TIP]
+> **Theme:** How to measure whether a prompt is actually working
+
+| # | Resource | Type | Topic | Day |
+|---|----------|------|-------|-----|
+| 20 | [Anthropic Docs — Evaluate Your Prompts](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/evaluate-prompts) | 📄 Documentation | Evaluation methodology, test set construction, grading criteria | Week 7 · Day 1 |
+| 21 | [LLM-as-a-Judge (Zheng et al., 2023)](https://arxiv.org/abs/2306.05685) | 🔬 Paper | Original LLM-as-judge paper — methodology, biases, best practices | Week 7 · Day 4 |
+| 22 | [Anthropic Cookbook — Evaluation Examples](https://github.com/anthropics/anthropic-cookbook/tree/main/misc) | 📖 Guide | Practical eval patterns, grading rubrics, automated testing | Week 7 · Day 5 |
+| 23 | [Promptingguide.ai — Reliability](https://www.promptingguide.ai/risks/reliability) | 📖 Guide | Confidence calibration, failure modes, consistency testing | Week 7 · Day 4 |
+
+---
+
+## Week 8 — Capstone: Document Q&A System
+
+> [!TIP]
+> **Theme:** A 3-prompt pipeline that answers questions from documents without hallucinating
+
+| # | Resource | Type | Topic | Day |
+|---|----------|------|-------|-----|
+| 24 | [Anthropic Docs — Long Context Tips](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/long-context-window-tips) | 📄 Documentation | Handling long documents, context window management, chunking strategies | Week 8 · Day 1 |
+| 25 | [Anthropic Cookbook — RAG Patterns](https://github.com/anthropics/anthropic-cookbook/tree/main/misc) | 📖 Guide | Retrieval-augmented generation, document Q&A architecture patterns | Week 8 · Day 2 |
+| 26 | [Prompting Guide — Hallucination Reduction](https://www.promptingguide.ai/risks/factuality) | 📖 Guide | Factuality constraints, source-grounded answering, abstention patterns | Week 8 · Day 3 |
+| 27 | [Loom](https://www.loom.com) | 🎥 Video | Screen recording tool used for project demo walkthrough | Week 8 · Day 6 |
+
+---
+
 > [!IMPORTANT]
 > **Reminder to self:** Add a row here before closing any session where you read something new.
 > Link → Type → Topic → Day. Takes 30 seconds and saves hours of backtracking later.
