@@ -8,7 +8,7 @@
 
 ## 👤 Background
 
-Previously an iOS/Swift developer — built real apps, worked with MVC patterns, animations, and production code. After 4 years building outside of tech, I'm returning with sharper focus and a clear direction: **AI Prompt Engineering**.
+Mobile app dev — built real apps, worked with MVC patterns, animations, and production code. After 4 years building outside of tech, I'm returning with sharper focus and a clear direction.
 
 This repo documents every step of that journey in real time — the experiments, the failures, the projects, and the reasoning behind every decision.
 
